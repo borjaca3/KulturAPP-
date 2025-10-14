@@ -1,0 +1,4 @@
+README
+
+Navegación entre pantallas,
+Audio funcional,pero sin terminar
