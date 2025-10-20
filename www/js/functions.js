@@ -1,53 +1,127 @@
-/*
- * $Id: functions.js Oct 9, 2023 9:41:54 AM tta2526$
- * 
- * Copyright (C) 2023 Maider Huarte Arrayago
- * 
- * This file is part of TTA2526_08v3_www.zip.
- * 
- * TTA2526_08v3_www.zip is intended
- * for learning purpouses only.
- * 
- * TTA2526_08v3_www.zip is free software: you can redistribute it and/or modify it under
- * the terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option) any later
- * version.
- * 
- * TTA2526_08v3_www.zip is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details
- * <http://www.gnu.org/licenses/>.
- */
 
-function check(i) {//V1
-	//	console.log("check 1");
 
-	results.answered++;
+/*document.addEventListener("deviceready", function() {
+	const sendBtn = document.getElementById("enviarDibujo1");
 
-	var answer = $("input[name='radio-choice-" + i + "']:checked").val();
+	if (sendBtn) {
+			sendBtn.addEventListener("click", function() {
+				var inicailpath= 	"img/Pinta y colorea/eiffel-tower-coloring-page.png";
+				
+					const email = {
+							to: 'bcavia001@ikasle.ehu.eus',
+							subject: 'Dibujo 1 enviado desde KulturApp',
+							body: 'Aquí tienes mi dibujo 😊',
+							attachments: [imagenpath],
+							isHtml: true
+					};
 
-	if (tests[i].resp[answer].isCorrect) {
-		alert("CORRECT");
-		results.corrects++;
+					cordova.plugins.email.open(email, function() {
+							console.log('Correo preparado');
+					});
+			});
 	}
-	else {
-		alert("WRONG");
-		$("#button-" + i + "-2").css("display", "block");
-	}
+});*/
 
-	$(".res-1").text("" + results.corrects + "/" + results.answered);
-	$(".res-2").text("" + (results.corrects * 100 / results.answered).toFixed(2) + "%");
+document.addEventListener("deviceready", function() {
 
-	$("label[id|='label-radio-choice-" + i + "']").each( //V2
-		function(rI) {
-			if (!tests[i].resp[rI].isCorrect)
-				$(this).css("color", "darkred");
-			else
-				$(this).css({ "color": "white", "background-color": "rgb(100, 150, 100)", "font-size": "24px" });
-		}
-	);
+	// Datos de los dibujos
+	const dibujos = [
+			{
+					id: "enviarDibujo1",
+					link: "https://ehubox.ehu.eus/s/5cSCMF2PQgzbQoY?dir=undefined&path=%2FPinta%20y%20colorea&openfile=245449142",
+					titulo: "Dibujo 1"
+			},
+			{
+					id: "enviarDibujo2",
+					link: "https://ehubox.ehu.eus/s/5cSCMF2PQgzbQoY?dir=undefined&path=%2FPinta%20y%20colorea&openfile=245449135",
+					titulo: "Dibujo 2"
+			},
+			{
+					id: "enviarDibujo3",
+					link: "https://ehubox.ehu.eus/s/5cSCMF2PQgzbQoY?dir=undefined&path=%2FPinta%20y%20colorea&openfile=245449127",
+					titulo: "Dibujo 3"
+			},
+			{
+					id: "enviarDibujo4",
+					link: "https://ehubox.ehu.eus/s/5cSCMF2PQgzbQoY?dir=undefined&path=%2FPinta%20y%20colorea&openfile=245449118",
+					titulo: "Dibujo 4"
+			},
+			{
+				id: "enviarDibujo5",
+				link: "https://ehubox.ehu.eus/s/5cSCMF2PQgzbQoY?dir=undefined&path=%2FPinta%20y%20colorea&openfile=245449103",
+				titulo: "Dibujo 5"
+			},
+			{
+				id: "enviarDibujo6",
+				link: "https://ehubox.ehu.eus/s/5cSCMF2PQgzbQoY?dir=undefined&path=%2FPinta%20y%20colorea&openfile=245449155",
+				titulo: "Dibujo 6"
+			}
 
-	$("#button-" + i + "-1").addClass("ui-disabled"); //V2
+	];
 
-	//	console.log("check 2");
+	// Asigna un listener a cada botón existente
+	dibujos.forEach(d => {
+			const btn = document.getElementById(d.id);
+			if (btn) {
+					btn.addEventListener("click", function() {
+
+							const email = {
+									to: 'bcavia001@ikasle.ehu.eus',
+									subject: `${d.titulo} enviado desde KulturApp`,
+									body: `
+										¡Hola!<br><br>
+										Aquí tienes el enlace a  ${d.titulo}:<br>
+										<a href="${d.link}">${d.link}</a><br><br>
+										😊
+										`,
+									isHtml: true
+							};
+
+							cordova.plugins.email.open(email, function() {
+									console.log(`${d.titulo} preparado para enviar`);
+							});
+					});
+			}
+	});
+});
+
+
+
+function openVideo(link) {
+  const modal = document.getElementById('videoModal');
+  const iframe = document.getElementById('popupVideo');
+  iframe.src = link;
+  modal.style.display = 'flex';
 }
+
+function closeVideo() {
+  const modal = document.getElementById('videoModal');
+  const iframe = document.getElementById('popupVideo');
+  modal.style.display = 'none';
+  iframe.src = "";
+}
+
+function openInfo() {
+  document.getElementById('infoModal').style.display = 'flex';
+}
+
+function closeInfo() {
+  document.getElementById('infoModal').style.display = 'none';
+}
+
+
+///INtento de firebase seguramente hay que eliminar
+(async () => {
+  const version = await getVersion();
+  console.log("Versión actual:", version);
+
+  const videos = await getVideoURLs();
+  console.log("Videos:", videos);
+
+  const audios = await getAudioURLs();
+  console.log("Audios:", audios);
+
+  const imagenes = await getImages();
+  console.log("Imágenes:", imagenes);
+})();
+//////////

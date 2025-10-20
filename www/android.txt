@@ -1,4 +1,7 @@
 README
 
-Navegación entre pantallas,
-Audio funcional,pero sin terminar
+cordova plugin add cordova-plugin-email-composer
+
+///cordova plugin add cordova-plugin-file
+
+

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
 <html>
 <head>
 	<link rel="stylesheet" href="css/index.css" />
@@ -19,7 +19,9 @@
 	<div data-role="page" id="page-welcome">
 		<div data-role="header" data-position="fixed">
 			<img src='img/ElP1/PARTE DE ARRIBA/ICONO KULTURAPP.png' >
-			<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png' style="float: right;">
+			<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png'
+					 style="float: right; cursor: pointer;"
+       		 onclick="openInfo()">
 		</div>
 	
 		<div data-role="content" style="text-align: center; padding: 40px 20px;">
@@ -74,10 +76,45 @@
 		</div>
 	</div>
 
+	<!-- ====== MODAL DE INFORMACIÓN ====== -->
+<div id="infoModal" style="
+display:none;
+position:fixed;
+top:0; left:0;
+width:100%; height:100%;
+background-color: rgba(0,0,0,0.6);
+justify-content:center;
+align-items:center;
+z-index:9999;">
+<div style="
+	background:white;
+	padding:25px;
+	border-radius:15px;
+	text-align:center;
+	max-width:300px;
+	box-shadow:0 0 10px rgba(0,0,0,0.3);
+	font-family:'Arial Rounded MT Bold', sans-serif;">
+	<p style="font-size:18px; color:#333;">
+		App desarrollada por<br><b>Luis Herrero</b>, <b>Borja Cavia</b>, <b>Nahikari Mota</b>, <b>Ander Jimenez</b>, <b>Alaitz Arrieta</b>, <b>Eider Becerril</b>, <b>Irantzu Gonzalez</b> y <b>Ane Gutierrez</b>. Esperamos que disfruteis y aprendais con KulturApp!
+	</p>
+	<button onclick="closeInfo()" style="
+		margin-top:15px;
+		background-color:#e91e63;
+		color:white;
+		border:none;
+		padding:8px 15px;
+		border-radius:10px;
+		cursor:pointer;">
+		Cerrar
+	</button>
+</div>
+</div>
 	<div data-role="page" id="page-menu">
 		<div data-role="header" data-position="fixed">
 			<img src='img/ElP1/PARTE DE ARRIBA/ICONO KULTURAPP.png' >
-			<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png' style="float: right;">
+			<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png'
+					 style="float: right; cursor: pointer;"
+       		 onclick="openInfo()">
 		</div>
 	
 		<div data-role="content" style="text-align: center; padding: 20px;">
@@ -111,9 +148,11 @@
 
 	<!-- Página CONÓCENOS (P4) -->
 <div data-role="page" id="page-conocenos">
-  <div data-role="header" data-position="fixed">
+	<div data-role="header" data-position="fixed">
 		<img src='img/ElP1/PARTE DE ARRIBA/ICONO KULTURAPP.png' >
-		<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png' style="float: right;">
+		<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png'
+				 style="float: right; cursor: pointer;"
+					onclick="openInfo()">
 	</div>
 
   <div data-role="content" style="text-align: center; padding: 20px;">
@@ -121,42 +160,71 @@
     <!-- Fila 1 -->
     <div style="display: flex; justify-content: center; gap: 25px; margin-bottom: 20px;">
       <div>
-        <img src="img/ELEMENTOS P4/BOTON BRASIL.png" style="width:80%; height:auto; border-radius: 10px;">
+        <img src="img/ELEMENTOS P4/BOTON BRASIL.png"
+             style="width:80%; height:auto; border-radius: 10px; cursor:pointer;"
+             onclick="openVideo('videos/brasil.mp4')">
       </div>
       <div>
-        <img src="img/ELEMENTOS P4/BOTON FRANCIA.png" style="width:80%; height:auto; border-radius: 10px;">
+        <img src="img/ELEMENTOS P4/BOTON FRANCIA.png"
+             style="width:80%; height:auto; border-radius: 10px; cursor:pointer;"
+             onclick="openVideo('videos/francia.mp4')">
       </div>
     </div>
 
     <!-- Fila 2 -->
     <div style="display: flex; justify-content: center; gap: 25px; margin-bottom: 20px;">
       <div>
-        <img src="img/ELEMENTOS P4/BOTON EGIPTO.png" style="width:80%; height:auto; border-radius: 10px;">
+        <img src="img/ELEMENTOS P4/BOTON EGIPTO.png"
+             style="width:80%; height:auto; border-radius: 10px; cursor:pointer;"
+             onclick="openVideo('img/VIDEOS PAISES (P5-6-7-8-9-10)/EGIPTO.mp4')">
       </div>
       <div>
-        <img src="img/ELEMENTOS P4/BOTON AUSTRALIA.png" style="width:80%; height:auto; border-radius: 10px;">
+        <img src="img/ELEMENTOS P4/BOTON AUSTRALIA.png"
+             style="width:80%; height:auto; border-radius: 10px; cursor:pointer;"
+						 onclick="window.open('https://ehubox.ehu.eus/s/5cSCMF2PQgzbQoY?dir=undefined&path=%2FVIdeos&openfile=245216406', '_blank')">
       </div>
     </div>
 
     <!-- Fila 3 -->
     <div style="display: flex; justify-content: center; gap: 25px; margin-bottom: 30px;">
       <div>
-        <img src="img/ELEMENTOS P4/BOTON CHINA.png" style="width:80%; height:auto; border-radius: 10px;">
+        <img src="img/ELEMENTOS P4/BOTON CHINA.png"
+             style="width:80%; height:auto; border-radius: 10px; cursor:pointer;"
+             onclick="openVideo('videos/china.mp4')">
       </div>
       <div>
-        <img src="img/ELEMENTOS P4/BOTON EEUU.png" style="width:80%; height:auto; border-radius: 10px;">
+        <img src="img/ELEMENTOS P4/BOTON EEUU.png"
+             style="width:80%; height:auto; border-radius: 10px; cursor:pointer;"
+             onclick="openVideo('videos/eeuu.mp4')">
       </div>
     </div>
 
-		<!-- Fila 4 -->
+    <!-- Fila 4 -->
     <div style="display: flex; justify-content: center; gap: 25px; margin-bottom: 30px;">
       <div>
-				<a href="#page-menu">
-        <img src="img/ELEMENTOS P4/BOTON SALIR.png" style="width:100%; height:auto; border-radius: 10px;">
-				</a>
-			</div>
+        <a href="#page-menu">
+          <img src="img/ELEMENTOS P4/BOTON SALIR.png"
+               style="width:100%; height:auto; border-radius: 10px;">
+        </a>
+      </div>
     </div>
+  </div>
+</div>
 
+<!-- ====== MODAL DE VIDEO ====== -->
+<div id="videoModal" style="
+  display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+  background-color: rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:9999;">
+  <div style="position:relative; width:80%; max-width:700px;">
+    <span onclick="closeVideo()" style="
+      position:absolute; top:-30px; right:0; font-size:30px; color:white;
+      cursor:pointer;">&times;</span>
+    <iframe id="popupVideo"
+            width="100%" height="400"
+            style="border-radius:10px; background:white;"
+            src=""
+            frameborder="0">
+    </iframe>
   </div>
 </div>
 
@@ -164,7 +232,9 @@
 <div data-role="page" id="page-minijuegos">
 	<div data-role="header" data-position="fixed">
 		<img src='img/ElP1/PARTE DE ARRIBA/ICONO KULTURAPP.png' >
-		<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png' style="float: right;">
+		<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png'
+				 style="float: right; cursor: pointer;"
+					onclick="openInfo()">
 	</div>
 
 	<div data-role="content" style="text-align:center; padding:20px;">
@@ -182,7 +252,9 @@
 <div data-role="page" id="page-mesa">
 	<div data-role="header" data-position="fixed">
 		<img src='img/ElP1/PARTE DE ARRIBA/ICONO KULTURAPP.png' >
-		<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png' style="float: right;">
+		<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png'
+				 style="float: right; cursor: pointer;"
+					onclick="openInfo()">
 	</div>
 
 	<div data-role="content" style="text-align:center;">
@@ -205,7 +277,9 @@
 <div data-role="page" id="page-vestir">
 	<div data-role="header" data-position="fixed">
 		<img src='img/ElP1/PARTE DE ARRIBA/ICONO KULTURAPP.png' >
-		<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png' style="float: right;">
+		<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png'
+				 style="float: right; cursor: pointer;"
+					onclick="openInfo()">
 	</div>
 
 	<div data-role="content" style="display:flex; justify-content:space-between; align-items:center; padding:20px;">
@@ -226,7 +300,9 @@
 <div data-role="page" id="page-unir">
 	<div data-role="header" data-position="fixed">
 		<img src='img/ElP1/PARTE DE ARRIBA/ICONO KULTURAPP.png' >
-		<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png' style="float: right;">
+		<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png'
+				 style="float: right; cursor: pointer;"
+					onclick="openInfo()">
 	</div>
 
 	<div data-role="content" style="text-align:center;">
@@ -252,10 +328,12 @@
 
 <!-- P16 Página MÚSICA  -->
 <div data-role="page" id="page-musica">
-  <div data-role="header" data-position="fixed" style="background:#fff;">
-    <img src='img/ElP1/PARTE DE ARRIBA/ICONO KULTURAPP.png'>
-    <img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png' style="float:right;">
-  </div>
+	<div data-role="header" data-position="fixed">
+		<img src='img/ElP1/PARTE DE ARRIBA/ICONO KULTURAPP.png' >
+		<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png'
+				 style="float: right; cursor: pointer;"
+					onclick="openInfo()">
+	</div>
 
   <div data-role="content" style="text-align:center; padding:30px;">
     <h2 style="font-weight:bold; font-size:24px; margin-bottom:20px;">MÚSICA</h2>
@@ -316,7 +394,10 @@
 <!-- P17: PINTA Y COLOREA -->
 	<div data-role="page" id="page-pinta-y-colorea">
 		<div data-role="header" data-position="fixed">
-			<h1>PINTA Y COLOREA</h1>
+			<img src='img/ElP1/PARTE DE ARRIBA/ICONO KULTURAPP.png' >
+			<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png'
+					 style="float: right; cursor: pointer;"
+       		 onclick="openInfo()">
 		</div>
 
 		<div data-role="content" style="text-align: center; padding: 20px;">
@@ -324,21 +405,29 @@
 
 			<!-- DIBUJOS-->
 			<div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
+				<p>Dibujo 1</p>
 				<a href="#page-dibujo1">
-					<img src="img/Pinta y colorea/eiffel-tower-coloring-page.png" style="width: 80%; height: auto; " />
-				Dibujo 1
+					<img src="img/Pinta y colorea/USA.jpg" style="width: 80%; height: auto; " />
 				</a>
+				<p>Dibujo 2</p>
 				<a href="#page-dibujo2" >
-					<img src="img/Pinta y colorea/eiffel-tower-coloring-page.png" style="width: 80%; height: auto; " />
-				Dibujo 2
+					<img src="img/Pinta y colorea/FRANCIA.jpg" style="width: 80%; height: auto; " />
 				</a>
+				<p>Dibujo 3</p>
 				<a href="#page-dibujo3">
-					<img src="img/Pinta y colorea/eiffel-tower-coloring-page.png" style="width: 80%; height: auto; " />
-				Dibujo 3
+					<img src="img/Pinta y colorea/EGYPT.jpg" style="width: 80%; height: auto; " />
 				</a>
+				<p>Dibujo 4</p>
 				<a href="#page-dibujo4" >
-					<img src="img/Pinta y colorea/eiffel-tower-coloring-page.png" style="width: 80%; height: auto; " />
-				Dibujo 4
+					<img src="img/Pinta y colorea/CHINA.jpg" style="width: 80%; height: auto; " />
+				</a>
+				<p>Dibujo 5</p>
+				<a href="#page-dibujo5" >
+					<img src="img/Pinta y colorea/BRAZIL.jpg" style="width: 80%; height: auto; " />
+				</a>
+				<p>Dibujo 6</p>
+				<a href="#page-dibujo6" >
+					<img src="img/Pinta y colorea/AUSTRALIA.jpg" style="width: 80%; height: auto; " />
 				</a>
 			</div>
 
@@ -352,16 +441,19 @@
 	<!-- P18: DIBUJO 1 -->
 		<div data-role="page" id="page-dibujo1">
 			<div data-role="header" data-position="fixed">
-				<h1>DIBUJO 1</h1>
+				<img src='img/ElP1/PARTE DE ARRIBA/ICONO KULTURAPP.png' >
+				<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png'
+						 style="float: right; cursor: pointer;"
+							onclick="openInfo()">
 			</div>
 	
 			<div data-role="content" style="text-align: center;">
 				<div >
-					<img src="img/Pinta y colorea/eiffel-tower-coloring-page.png" style="width: 100%; height: auto; " />
+					<img src="img/Pinta y colorea/USA.jpg" style="width: 100%; height: auto; " />
 					Dibujo 1
 				</div>
 	
-				<a href="#" class="ui-btn ui-corner-all ui-btn-b" onclick="">Enviar</a>
+				<a href="#" id="enviarDibujo1" class="ui-btn ui-corner-all ui-btn-b">Enviar</a>
 				<a href="#page-pinta-y-colorea" class="ui-btn ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Atrás</a>
 				<a href="#page-dibujo2" class="ui-btn ui-corner-all ui-btn-inline ui-icon-forward ui-btn-icon-right">Cambiar dibujo</a>
 			</div>
@@ -371,16 +463,18 @@
 	<div data-role="page" id="page-dibujo2">
 		<div data-role="header" data-position="fixed">
 			<img src='img/ElP1/PARTE DE ARRIBA/ICONO KULTURAPP.png' >
-			<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png' style="float: right;">
+			<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png'
+					 style="float: right; cursor: pointer;"
+       		 onclick="openInfo()">
 		</div>
 
 		<div data-role="content" style="text-align: center;">
-			<div style="width:250px; height:250px; border:3px solid #6c63ff; margin:30px auto; background:white;
-						display:flex; align-items:center; justify-content:center; font-size:20px;">
+			<div >
+				<img src="img/Pinta y colorea/FRANCIA.jpg" style="width: 100%; height: auto; " />
 				Dibujo 2
 			</div>
 
-			<a href="#" class="ui-btn ui-corner-all ui-btn-b" onclick="">Enviar</a>
+			<a href="#href=mailto:bcavia001@ikasle.ehu.eus" class="ui-btn ui-corner-all ui-btn-b" onclick="">Enviar</a>
 			<a href="#page-pinta-y-colorea" class="ui-btn ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Atrás</a>
 			<a href="#page-dibujo3" class="ui-btn ui-corner-all ui-btn-inline ui-icon-forward ui-btn-icon-right">Cambiar dibujo</a>
 		</div>
@@ -390,12 +484,14 @@
 	<div data-role="page" id="page-dibujo3">
 		<div data-role="header" data-position="fixed">
 			<img src='img/ElP1/PARTE DE ARRIBA/ICONO KULTURAPP.png' >
-			<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png' style="float: right;">
+			<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png'
+					 style="float: right; cursor: pointer;"
+       		 onclick="openInfo()">
 		</div>
 
 		<div data-role="content" style="text-align: center;">
-			<div style="width:250px; height:250px; border:3px solid #6c63ff; margin:30px auto; background:white;
-						display:flex; align-items:center; justify-content:center; font-size:20px;">
+			<div >
+				<img src="img/Pinta y colorea/EGYPT.jpg" style="width: 100%; height: auto; " />
 				Dibujo 3
 			</div>
 
@@ -409,23 +505,67 @@
 	<div data-role="page" id="page-dibujo4">
 		<div data-role="header" data-position="fixed">
 			<img src='img/ElP1/PARTE DE ARRIBA/ICONO KULTURAPP.png' >
-			<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png' style="float: right;">
+			<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png'
+					 style="float: right; cursor: pointer;"
+       		 onclick="openInfo()">
 		</div>
 
 		<div data-role="content" style="text-align: center;">
-			<div style="width:250px; height:250px; border:3px solid #6c63ff; margin:30px auto; background:white;
-						display:flex; align-items:center; justify-content:center; font-size:20px;">
+			<div >
+				<img src="img/Pinta y colorea/CHINA.jpg" style="width: 100%; height: auto; " />
 				Dibujo 4
 			</div>
 
 			<a href="#" class="ui-btn ui-corner-all ui-btn-b" onclick="">Enviar</a>
 			<a href="#page-pinta-y-colorea" class="ui-btn ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Atrás</a>
-			<a href="#page-dibujo1" class="ui-btn ui-corner-all ui-btn-inline ui-icon-forward ui-btn-icon-right">Cambiar dibujo</a>
+			<a href="#page-dibujo5" class="ui-btn ui-corner-all ui-btn-inline ui-icon-forward ui-btn-icon-right">Cambiar dibujo</a>
 		</div>
 	</div>
+
+<!-- P22: DIBUJO 5 -->
+	<div data-role="page" id="page-dibujo5">
+		<div data-role="header" data-position="fixed">
+			<img src='img/ElP1/PARTE DE ARRIBA/ICONO KULTURAPP.png' >
+			<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png'
+						style="float: right; cursor: pointer;"
+						onclick="openInfo()">
+		</div>
+
+		<div data-role="content" style="text-align: center;">
+			<div >
+				<img src="img/Pinta y colorea/AUSTRALIA.jpg" style="width: 100%; height: auto; " />
+				Dibujo 5
+			</div>
+
+			<a href="#" id="enviarDibujo5" class="ui-btn ui-corner-all ui-btn-b">Enviar</a>
+			<a href="#page-pinta-y-colorea" class="ui-btn ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Atrás</a>
+			<a href="#page-dibujo6" class="ui-btn ui-corner-all ui-btn-inline ui-icon-forward ui-btn-icon-right">Cambiar dibujo</a>
+		</div>
+	</div>
+
+		<!-- P23: DIBUJO 6 -->
+		<div data-role="page" id="page-dibujo6">
+			<div data-role="header" data-position="fixed">
+				<img src='img/ElP1/PARTE DE ARRIBA/ICONO KULTURAPP.png' >
+				<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png'
+							style="float: right; cursor: pointer;"
+							onclick="openInfo()">
+			</div>
 	
+			<div data-role="content" style="text-align: center;">
+				<div >
+					<img src="img/Pinta y colorea/BRAZIL.jpg" style="width: 100%; height: auto; " />
+					Dibujo 6
+				</div>
+	
+				<a href="#" id="enviarDibujo6" class="ui-btn ui-corner-all ui-btn-b">Enviar</a>
+				<a href="#page-pinta-y-colorea" class="ui-btn ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Atrás</a>
+				<a href="#page-dibujo1" class="ui-btn ui-corner-all ui-btn-inline ui-icon-forward ui-btn-icon-right">Cambiar dibujo</a>
+			</div>
+		</div>
 	
 	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/utils.js"></script>
 	<script type="text/javascript" src="js/objects.js"></script>
 	<script type="text/javascript" src="js/functions.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
