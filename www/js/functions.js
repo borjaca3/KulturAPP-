@@ -9,32 +9,32 @@ document.addEventListener("deviceready", function() {
 			{
 					id: "enviarDibujo1",
 					link: "https://ehubox.ehu.eus/s/5cSCMF2PQgzbQoY?dir=undefined&path=%2FPinta%20y%20colorea&openfile=245449142",
-					titulo: "Dibujo 1"
+					titulo: "Dibujo E.E.U.U"
 			},
 			{
 					id: "enviarDibujo2",
 					link: "https://ehubox.ehu.eus/s/5cSCMF2PQgzbQoY?dir=undefined&path=%2FPinta%20y%20colorea&openfile=245449135",
-					titulo: "Dibujo 2"
+					titulo: "Dibujo Francia"
 			},
 			{
 					id: "enviarDibujo3",
 					link: "https://ehubox.ehu.eus/s/5cSCMF2PQgzbQoY?dir=undefined&path=%2FPinta%20y%20colorea&openfile=245449127",
-					titulo: "Dibujo 3"
+					titulo: "Dibujo Egipto"
 			},
 			{
 					id: "enviarDibujo4",
 					link: "https://ehubox.ehu.eus/s/5cSCMF2PQgzbQoY?dir=undefined&path=%2FPinta%20y%20colorea&openfile=245449118",
-					titulo: "Dibujo 4"
+					titulo: "Dibujo China"
 			},
 			{
 				id: "enviarDibujo5",
-				link: "https://ehubox.ehu.eus/s/5cSCMF2PQgzbQoY?dir=undefined&path=%2FPinta%20y%20colorea&openfile=245449103",
-				titulo: "Dibujo 5"
+				link: "https://ehubox.ehu.eus/s/5cSCMF2PQgzbQoY?dir=undefined&path=%2FPinta%20y%20colorea&openfile=245449155",
+				titulo: "Dibujo Australia"
 			},
 			{
 				id: "enviarDibujo6",
-				link: "https://ehubox.ehu.eus/s/5cSCMF2PQgzbQoY?dir=undefined&path=%2FPinta%20y%20colorea&openfile=245449155",
-				titulo: "Dibujo 6"
+				link: "https://ehubox.ehu.eus/s/5cSCMF2PQgzbQoY?dir=undefined&path=%2FPinta%20y%20colorea&openfile=245449103",
+				titulo: "Dibujo Brasil"
 			}
 
 	];
@@ -46,7 +46,7 @@ document.addEventListener("deviceready", function() {
 					btn.addEventListener("click", function() {
 
 							const email = {
-									to: 'bcavia001@ikasle.ehu.eus',
+									to: 'lherrero018@ikasle.ehu.eus',
 									subject: `${d.titulo} enviado desde KulturApp`,
 									body: `
 										¡Hola!<br><br>
@@ -199,19 +199,134 @@ $(document).on("pageshow", "#page-menu", function() {
   }
 });
 
+const contenedorPlatos = document.getElementById("platos-sobre-mesa");
+document.addEventListener("DOMContentLoaded", () => {
+	const platos = document.querySelectorAll(".plato");
 
-///INtento de firebase seguramente hay que eliminar
-(async () => {
-  const version = await getVersion();
-  console.log("Versión actual:", version);
+	// Añadir plato a la mesa
+	
 
-  const videos = await getVideoURLs();
-  console.log("Videos:", videos);
+	platos.forEach(plato => {
+		plato.addEventListener("click", () => {
+			const nombre = plato.dataset.nombre;
+	
+			const existente = contenedorPlatos.querySelector(`img[data-nombre="${nombre}"]`);
+			if (existente) {
+				existente.remove();
+				return;
+			}
+	
+			const nuevoPlato = document.createElement("img");
+			nuevoPlato.src = plato.src;
+			nuevoPlato.dataset.nombre = nombre;
+			nuevoPlato.classList.add("plato-sobre-mesa");
+	
+			// Posición aleatoria
+			const mesaRect = contenedorPlatos.getBoundingClientRect();
+			const x = Math.random() * (mesaRect.width - 70);
+			const y = Math.random() * (mesaRect.height - 70);
+			nuevoPlato.style.left = `${x}px`;
+			nuevoPlato.style.top = `${y}px`;
+	
+			nuevoPlato.addEventListener("click", () => nuevoPlato.remove());
+	
+			contenedorPlatos.appendChild(nuevoPlato);
+		});
+	});
+	
+});
+const btnReiniciar = document.getElementById("btnReiniciar");
+const btnFinalizar = document.getElementById("btnFinalizar");
 
-  const audios = await getAudioURLs();
-  console.log("Audios:", audios);
+btnReiniciar.addEventListener("click", () => {
+  contenedorPlatos.innerHTML = "";
+});
 
-  const imagenes = await getImages();
-  console.log("Imágenes:", imagenes);
-})();
-//////////
+btnFinalizar.addEventListener("click", () => {
+  alert("¡Has terminado de colocar los platos!");
+});
+
+
+
+
+/////////////Aqui estoy haciendo la parte de unir
+
+
+
+function newPeerGame() {
+	peerGame.create();
+	peerGame.print();
+
+	$("#total").empty();
+	$("#checkButton").removeClass("ui-disabled").show();
+}
+
+function checkRespOnR(rightI) {
+	peerGame.clearOnR(rightI);
+
+	var inputValue = $("#resp-" + rightI).val();
+	if (inputValue != null && $.isNumeric(inputValue) && (inputValue > 0 && inputValue <= peerGame.items.left.length)) {
+		var leftI = inputValue - 1;
+
+		peerGame.clearOnL(leftI);
+		peerGame.setNewResp(leftI, rightI);
+	}
+}
+
+function chooseL(leftI) {
+	if (peerGame.chosenL != null)
+		peerGame.styleItem("unselect", "#itemL-" + peerGame.chosenL);
+
+	peerGame.clearOnL(leftI);
+
+	peerGame.chosenL=leftI;
+	peerGame.styleItem("select",  "#itemL-" + leftI, peerGame.items.left[leftI].color);
+}
+
+function checkMatchOnR(rightI) {
+	var leftI=peerGame.chosenL;
+
+	if (leftI == null) {
+		alert("Elige primero el país");
+	}
+	else {
+		peerGame.clearOnR(rightI);
+
+		peerGame.setNewResp(leftI, rightI);
+		peerGame.chosenL = null;
+	}
+}
+
+
+
+
+function checkRound() {
+
+	var errors = false;
+
+	for (let i in peerGame.checks) {
+		if (peerGame.checks[i] == false) {
+			peerGame.clearOnR(i);
+
+			errors = true;
+		}
+	}
+
+	if (errors)
+		alert("Sigue intenándolo");
+	else {
+		$("#gameTable").addClass("ui-disabled");
+		alert("¡¡¡¡¡Felicidades!!!!!");
+
+		$("#checkButton").addClass("ui-disabled");
+	}
+}
+
+
+
+
+
+
+
+
+

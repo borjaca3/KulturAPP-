@@ -1,9 +1,0 @@
-README
-
-Esta semana hemos añadido el inicio de sesión con firebsae y las funciones necesarias para obtener las URLs de los videos de la base de datos.
-
-cordova plugin add cordova-plugin-email-composer
-
-///cordova plugin add cordova-plugin-file
-
-

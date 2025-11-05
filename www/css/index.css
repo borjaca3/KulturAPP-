@@ -1,0 +1,161 @@
+#page-menu { background-color: #00F7FA !important; }
+#page-conocenos {	
+	background-image:url('../img/ELEMENTOS P4/conocenos fondo.png');
+	background-repeat: repeat;
+	background-position: top-left;
+	background-size: 75%;
+	margin: 0;
+	padding: 0;}
+
+#page-musica{
+	background-image:url('../img/ELEMENTOS P16 (musika)/fondo musica.PNG');
+	background-repeat: repeat;
+	background-position: top-left;
+	background-size: 100%;
+	margin: 0;
+	padding: 0;
+}
+#page-mesa{
+	background-image:url('../img/ELEMENTOS P12 (mesa)/FOTO fondo pantalla.png');
+	background-repeat: repeat;
+	background-position: top-left;
+	background-size: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+
+
+
+.pinta-y-colorea{
+	background-image:url('images/pintaycoloreafondo.png');
+	background-repeat: repeat;
+	background-position: top-left;
+	background-size: 100%;
+	margin: 0;
+	padding: 0;
+}
+.minijuegos{
+	background-image:url('../img/minijuegos/minijuegos\ fondo.png');
+	background-repeat: repeat;
+	background-position: top-left;
+	background-size: 100%;
+	margin: 0;
+	padding: 0;
+}
+/*minijuego mesa*/
+
+.platos-superior {
+  overflow-x: auto;           /* permite scroll horizontal */
+  white-space: nowrap;        /* que los elementos estén en línea */
+  padding: 10px;
+  border-bottom: 2px solid #ccc;
+  background-color: #fff8dc;
+}
+
+.scrolling-wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.plato {
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  flex-shrink: 0;             /* evita que se encojan */
+  transition: transform 0.2s;
+}
+
+.plato:active {
+  transform: scale(0.9);
+}
+
+.p12 {
+  text-align: center;
+  background-color: #f5f5f5;
+}
+
+
+.plato {
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.plato:active {
+  transform: scale(0.9);
+}
+
+#mesa {
+  width: 250px;               /* tamaño de la mesa */
+  height: 250px;
+  margin: 30px auto;
+  position: relative;         /* para colocar los platos encima */
+}
+
+#imagen-mesa {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;        /* opcional, si quieres bordes redondeados */
+}
+
+#mesa img.plato-sobre-mesa {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  cursor: pointer;
+}
+#platos-sobre-mesa {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+	height: 100%;
+}
+#btn-reiniciar{
+	background-image: url('../img/ELEMENTOS P12 (mesa)/boton reiniciar.png');
+	height: 100%;
+}
+
+/*musica*/
+
+.audio-card {
+  background-size: contain;       /* 🔹 muestra toda la imagen */
+  background-repeat: no-repeat;   /* 🔹 no la repite */
+  background-position: center;    /* 🔹 centrada */
+
+  width: 100%;
+  height: 120px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;       /* centrado vertical */
+  justify-content: flex-start; /* alineación a la izquierda */
+  padding-left: 2px;         /* espacio desde el borde izquierdo */
+}
+
+.audio-card audio {
+  width: 50%;                 /* tamaño del reproductor */
+}
+
+.audio-card-derecha {
+  background-size: contain;       /* 🔹 muestra toda la imagen */
+  background-repeat: no-repeat;   /* 🔹 no la repite */
+  background-position: center;    /* 🔹 centrada */
+
+  width: 95%;
+  height: 120px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;       /* centrado vertical */
+  justify-content: flex-end; /* alineación a la izquierda */
+  padding-left: 25px;         /* espacio desde el borde izquierdo */
+}
+
+/*boton salir*/
+.salir{
+	width:100%; 
+	height:auto; 
+	border-radius: 10px;
+
+}

@@ -155,13 +155,55 @@ async function getAudioURLs() {
   const data = snapshot.val();
 
   // Filtrar solo las claves que empiecen con "URLaudio"
-  const urls = Object.keys(data)
-    .filter((key) => key.startsWith("URLaudio"))
+  const urlaudios = Object.keys(data)
+    .filter((key) => key.startsWith("URL"))
     .map((key) => data[key]);
 
-  console.log("URLs de audios:", urls);
-  return urls;
+  console.log("URLs de audios:", urlaudios);
+  return urlaudios;
 }
+
+async function asignarAudios() {
+  // Espera a que getAudioURLs devuelva las URLs
+	try {
+    const urls = await getAudioURLs();
+
+    if (!urls || urls.length === 0) {
+      console.error("No hay URLs de audios disponibles");
+      return;
+    }
+
+    // Selecciona los 6 elementos <audio> con id="audio1"... etc
+    const audios = Array.from(document.querySelectorAll("audio[id^='audio']"));
+
+    audios.forEach((el, index) => {
+      const src = urls[index]; // asigna en el mismo orden que vienen de Firebase
+      if (!src) {
+        console.warn(`No hay URL para ${el.id} (index ${index})`);
+        return;
+      }
+
+      el.src = src;
+      try { el.load(); } catch (e) {}
+      console.log(`Asignado ${src} a ${el.id}`);
+    });
+  } catch (err) {
+    console.error("Error en asignarAudios():", err);
+  }
+}
+// 👇 Escucha un evento personalizado o detecta el cambio de vista
+window.addEventListener("hashchange", () => {
+  if (window.location.hash === "#page-musica") {
+    asignarAudios();
+  }
+});
+
+// Si la página ya se abre directamente en #page-musica
+if (window.location.hash === "#page-musica") {
+  window.addEventListener("DOMContentLoaded", asignarAudios);
+}
+
+
 
 /**
  * Obtener las imágenes y versión de la tabla P12Imgs

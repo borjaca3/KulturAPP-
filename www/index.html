@@ -176,7 +176,8 @@ z-index:9999;">
 			<!-- Fila 3 -->
 			<div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
 				<a href="#page-musica">
-					<img src="img/ELEMENTOS P3 (VIAJA Y APRENDE)/BOTON MUSICA.png" style="width: 80%; height: auto;" />
+					<img src="img/ELEMENTOS P3 (VIAJA Y APRENDE)/BOTON MUSICA.png" style="width: 80%; height: auto;"
+					onclick="asignarAudios()" />
 				</a>
 				<a href="#page-pinta-y-colorea">
 					<img src="img/ELEMENTOS P3 (VIAJA Y APRENDE)/BOTON PINTA Y COLOREA.png" style="width: 80%; height: auto;" />
@@ -185,9 +186,8 @@ z-index:9999;">
 			<div>
 				<h2><span id="nombre"></span> </h2>
 			</div>
-			<a href=""
-								class="ui-btn ui-btn-inline ui-corner-all ui-mini" onclick="signout()"
-								style="margin-top: 5px; margin-bottom: 5px;">Cerrar sesión</a>
+			<a href="" class="ui-btn ui-btn-inline ui-corner-all ui-mini" onclick="signout()"
+				style="margin-top: 5px; margin-bottom: 5px;">Cerrar sesión</a>
 		</div>
 	</div>
 
@@ -247,11 +247,11 @@ z-index:9999;">
 			<div style="display: flex; justify-content: center; gap: 25px; margin-bottom: 30px;">
 				<div>
 					<a href="#page-menu">
-						<img src="img/ELEMENTOS P4/BOTON SALIR.png" style="width:100%; height:auto; border-radius: 10px;">
+						<img src="img/ELEMENTOS P4/BOTON SALIR.png" class="salir">
 					</a>
 				</div>
 			</div>
-			  
+			
 		</div>
 	</div>
 
@@ -272,19 +272,36 @@ z-index:9999;">
 	</div>
 
 	<!-- P11: MENÚ DE MINIJUEGOS -->
-	<div data-role="page" id="page-minijuegos">
+	<div data-role="page" id="page-minijuegos" class="minijuegos">
 		<div data-role="header" data-position="fixed">
 			<img src='img/ElP1/PARTE DE ARRIBA/ICONO KULTURAPP.png'>
 			<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png' style="float: right; cursor: pointer;" onclick="openInfo()">
 		</div>
 
 		<div data-role="content" style="text-align:center; padding:20px;">
-			<a href="#page-mesa" class="ui-btn ui-corner-all ui-shadow ui-btn-b">Mesa</a>
-			<a href="#page-vestir" class="ui-btn ui-corner-all ui-shadow ui-btn-b">Vestir</a>
-			<a href="#page-unir" class="ui-btn ui-corner-all ui-shadow ui-btn-b">Unir</a>
+			<img src='img/minijuegos/titulo minijuegos.png' style="width: 100%;">
 
-			<div style="margin-top:40px;">
-				<a href="#page-menu" class="ui-btn ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Salir</a>
+			<div style="display: flex; justify-content: center; gap: 25px; margin-bottom: 30px;">
+				<div>
+					<a href="#page-mesa">
+						<img src="img/minijuegos/boton juego mesa.png" style="width:100%; height:auto; border-radius: 10px;">
+					</a>
+				</div>
+			</div>
+			<div style="display: flex; justify-content: center; gap: 25px; margin-bottom: 30px;">
+				<div>
+					<a href="#page-unir" onclick="newPeerGame()">
+						<img src="img/minijuegos/unir juego boton.png" style="width:100%; height:auto; border-radius: 10px;">
+					</a>
+				</div>
+			</div>
+
+			<div style="display: flex; justify-content: center; gap: 25px; margin-bottom: 30px;">
+				<div>
+					<a href="#page-menu">
+						<img src="img/ELEMENTOS P4/BOTON SALIR.png" class="salir">
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -295,43 +312,42 @@ z-index:9999;">
 			<img src='img/ElP1/PARTE DE ARRIBA/ICONO KULTURAPP.png'>
 			<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png' style="float: right; cursor: pointer;" onclick="openInfo()">
 		</div>
-
-		<div data-role="content" style="text-align:center;">
-			<div style="width:90%; height:400px; ">
-				<p>Zona de juego (arrastrar comida, platos, etc.)</p>
+		<!-- GALERÍA SUPERIOR DE PLATOS - barra desplazable -->
+		<div class="platos-superior">
+			<div class="scrolling-wrapper">
+				<img src="img/ELEMENTOS P12 (mesa)/BOTONES COMIDA/arroz.png " class="plato" data-nombre="arroz">
+				<img src="img/ELEMENTOS P12 (mesa)/BOTONES COMIDA/basbousa.png" class="plato" data-nombre="basbousa">
+				<img src="img/ELEMENTOS P12 (mesa)/BOTONES COMIDA/croassan.png" class="plato" data-nombre="croassan">
+				<img src="img/ELEMENTOS P12 (mesa)/BOTONES COMIDA/dumplings.png" class="plato" data-nombre="dumplingd">
+				<img src="img/ELEMENTOS P12 (mesa)/BOTONES COMIDA/feijoada.png" class="plato" data-nombre="feijoada">
+				<img src="img/ELEMENTOS P12 (mesa)/BOTONES COMIDA/Hamburgusa con patatas.png" class="plato" data-nombre="hamburguesa">
+				<img src="img/ELEMENTOS P12 (mesa)/BOTONES COMIDA/helado.png" class="plato" data-nombre="helado">
+				<img src="img/ELEMENTOS P12 (mesa)/BOTONES COMIDA/koshari.png" class="plato" data-nombre="koshari">
+				<img src="img/ELEMENTOS P12 (mesa)/BOTONES COMIDA/meat pie.png" class="plato" data-nombre="pie">
+				<img src="img/ELEMENTOS P12 (mesa)/BOTONES COMIDA/patatas.png" class="plato" data-nombre="patatas">
 			</div>
-
-			<div style="margin-top:20px;">
-				<a href="#" class="ui-btn ui-corner-all ui-btn-inline ui-icon-refresh ui-btn-icon-left">Reiniciar</a>
-			</div>
-			<div style="margin-top:40px;">
-				<a href="#page-minijuegos">
-					<img src="img/ELEMENTOS P4/BOTON SALIR.png" style="width:120px; height:auto;">
-				</a>
-			</div>
 		</div>
-	</div>
-
-	<!-- P13: VESTIR (AVATAR Y ACCESORIOS) -->
-	<div data-role="page" id="page-vestir">
-		<div data-role="header" data-position="fixed">
-			<img src='img/ElP1/PARTE DE ARRIBA/ICONO KULTURAPP.png'>
-			<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png' style="float: right; cursor: pointer;" onclick="openInfo()">
+		<div id="mesa">
+			<img src="img/ELEMENTOS P12 (mesa)/mesa.png" id="imagen-mesa">
+			<div id="platos-sobre-mesa"></div> 
+			<!-- Los platos se agregarán dinámicamente aquí -->
 		</div>
-
-		<div data-role="content" style="display:flex; justify-content:space-between; align-items:center; padding:20px;">
-
-		</div>
-
-		<div style="text-align:center; margin-top:20px;">
-			<a href="#" class="ui-btn ui-corner-all ui-btn-inline ui-icon-refresh ui-btn-icon-left">Reiniciar</a>
-		</div>
-		<div style="margin-top:40px;">
-			<a href="#page-minijuegos">
-				<img src="img/ELEMENTOS P4/BOTON SALIR.png" style="width:120px; height:auto;">
+		<div style="display: flex; justify-content: center; margin: 50px;">
+			<a href="#" id="btnReiniciar">
+				<img src="img/ELEMENTOS P12 (mesa)/boton reiniciar.png" height="63px">
+			</a>
+			<a href="#" id="btnFinalizar" >
+				<img src="img/ELEMENTOS P12 (mesa)/boton TICK.png" height="63px">
 			</a>
 		</div>
+			<div style="margin-top:40px;">
+				<a href="#page-minijuegos">
+					<img src="img/ELEMENTOS P4/BOTON SALIR.png" class="salir">
+				</a>
+			</div>
+		
 	</div>
+
 
 	<!-- P14: UNIR (PERSONAJES Y ELEMENTOS) -->
 	<div data-role="page" id="page-unir">
@@ -340,146 +356,106 @@ z-index:9999;">
 			<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png' style="float: right; cursor: pointer;" onclick="openInfo()">
 		</div>
 
-		<div data-role="content" style="text-align:center;">
-			<div style="display:flex; justify-content:space-around; align-items:center; margin-top:30px;">
-				<div
-					style="width:40%; border:1px solid #ccc; background:#fafafa; height:300px; display:flex; align-items:center; justify-content:center;">
-					PERSONAJES
+		<div data-role="content">
+			<div id="playground">
+				<table id="gameTable" style="margin-left: auto; margin-right: auto; width: 100%;"></table>
+				<a onclick="checkRound()" id="checkButton" style="display: none;" class="ui-btn ui-corner-all">CHECK</a>
+			</div>
+			<div style="display: flex; justify-content: center; gap: 25px; margin-bottom: 30px;">
+				<div>
+					<a href="#" onclick="newPeerGame()">
+						<img src="img/ELEMENTOS P12 (mesa)/boton reiniciar.png"
+							style="width:100%; height:auto; border-radius: 10px;">
+					</a>
 				</div>
-				<div
-					style="width:40%; border:1px solid #ccc; background:#fafafa; height:300px; display:flex; align-items:center; justify-content:center;">
-					ELEMENTOS
+			</div>
+			<div style="display: flex; justify-content: center; gap: 25px; margin-bottom: 30px;">
+				<div>
+					<a href="#page-minijuegos">
+						<img src="img/ELEMENTOS P4/BOTON SALIR.png" class="salir">
+					</a>
 				</div>
 			</div>
 
-			<div style="margin-top:30px;">
-				<a href="#page-unir" class="ui-btn ui-corner-all ui-btn-inline ui-icon-arrow-r ui-btn-icon-right">Siguiente</a>
-			</div>
-			<div style="margin-top:40px;">
-				<a href="#page-minijuegos">
-					<img src="img/ELEMENTOS P4/BOTON SALIR.png" style="width:120px; height:auto;">
-				</a>
-			</div>
+
 		</div>
 	</div>
 
-	<!-- P16 Página MÚSICA  -->
-	<div data-role="page" id="page-musica">
-		<div data-role="header" data-position="fixed">
-			<img src='img/ElP1/PARTE DE ARRIBA/ICONO KULTURAPP.png'>
-			<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png' style="float: right; cursor: pointer;" onclick="openInfo()">
-		</div>
-
-		<div data-role="content" style="text-align:center; padding:30px;">
-			<div style="display:flex; flex-direction:column; align-items:center; gap:25px;">
-
-				<!-- Canción 1 -->
-				<div style="
-				display:flex; 
-				align-items:center; 
-				justify-content:center; 
-				gap:15px; 
-				margin-bottom:20px;">
-					<img src="img/musica/brazil-2697846_1280.jpg" alt="Brasil"
-						style="width:120px; height:80px; border-radius:10px; box-shadow:0 0 5px rgba(0,0,0,0.2);">
-					<audio controls style="width:220px;">
-						<source src="https://ehubox.ehu.eus/s/5cSCMF2PQgzbQoY/download?path=%2FAudios&files=Australia.mp3"
-							type="audio/mpeg">
-						Tu navegador no soporta el elemento de audio.
-					</audio>
-				</div>
-
-				<!-- Canción 2 -->
-				<div style="
-				display:flex; 
-				align-items:center; 
-				justify-content:center; 
-				gap:15px; 
-				margin-bottom:20px;">
-					<img src="img/musica/australia-28586_1280.png" alt="Brasil"
-						style="width:120px; height:80px; border-radius:10px; box-shadow:0 0 5px rgba(0,0,0,0.2);">
-					<audio controls style="width:220px;">
-						<source src="https://ehubox.ehu.eus/s/5cSCMF2PQgzbQoY/download?path=%2FAudios&files=Australia.mp3"
-							type="audio/mpeg">
-						Tu navegador no soporta el elemento de audio.
-					</audio>
-				</div>
-
-				<!-- Canción 3 -->
-				<div style="
-				display:flex; 
-				align-items:center; 
-				justify-content:center; 
-				gap:15px; 
-				margin-bottom:20px;">
-					<img src="img/musica/flag-1040555_1280.png" alt="Brasil"
-						style="width:120px; height:80px; border-radius:10px; box-shadow:0 0 5px rgba(0,0,0,0.2);">
-					<audio controls style="width:220px;">
-						<source src="https://ehubox.ehu.eus/s/5cSCMF2PQgzbQoY/download?path=%2FAudios&files=Australia.mp3"
-							type="audio/mpeg">
-						Tu navegador no soporta el elemento de audio.
-					</audio>
-				</div>
-
-				<!-- Canción 4 -->
-				<div style="
-				display:flex; 
-				align-items:center; 
-				justify-content:center; 
-				gap:15px; 
-				margin-bottom:20px;">
-					<img src="img/musica/flag-7878871_1280.jpg" alt="Brasil"
-						style="width:120px; height:80px; border-radius:10px; box-shadow:0 0 5px rgba(0,0,0,0.2);">
-					<audio controls style="width:220px;">
-						<source src="https://ehubox.ehu.eus/s/5cSCMF2PQgzbQoY/download?path=%2FAudios&files=Australia.mp3"
-							type="audio/mpeg">
-						Tu navegador no soporta el elemento de audio.
-					</audio>
-				</div>
-
-				<!-- Canción 5 -->
-				<div style="
-				display:flex; 
-				align-items:center; 
-				justify-content:center; 
-				gap:15px; 
-				margin-bottom:20px;">
-					<img src="img/musica/egypt-162284_1280.png" alt="Brasil"
-						style="width:120px; height:80px; border-radius:10px; box-shadow:0 0 5px rgba(0,0,0,0.2);">
-					<audio controls style="width:220px;">
-						<source src="https://ehubox.ehu.eus/s/5cSCMF2PQgzbQoY/download?path=%2FAudios&files=Australia.mp3"
-							type="audio/mpeg">
-						Tu navegador no soporta el elemento de audio.
-					</audio>
-				</div>
-
-				<!-- Canción 6 -->
-				<div style="
-				display:flex; 
-				align-items:center; 
-				justify-content:center; 
-				gap:15px; 
-				margin-bottom:20px;">
-					<img src="img/musica/american-flag-1311743_1280.png" alt="Brasil"
-						style="width:120px; height: 80px; border-radius:10px; box-shadow:0 0 5px rgba(0,0,0,0.2);">
-					<audio controls style="width:220px;">
-						<source src="https://ehubox.ehu.eus/s/5cSCMF2PQgzbQoY/download?path=%2FAudios&files=Australia.mp3"
-							type="audio/mpeg">
-						Tu navegador no soporta el elemento de audio.
-					</audio>
-				</div>
-			</div>
-
-			<div style="margin-top:40px;">
-				<a href="#page-menu">
-					<img src="img/ELEMENTOS P4/BOTON SALIR.png" style="width:120px; height:auto;">
-				</a>
-			</div>
-		</div>
+<!-- P16 Página MÚSICA  -->
+<div data-role="page" id="page-musica">
+	<div data-role="header" data-position="fixed">
+		<img src='img/ElP1/PARTE DE ARRIBA/ICONO KULTURAPP.png' >
+		<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png'
+				 style="float: right; cursor: pointer;"
+					onclick="openInfo()">
 	</div>
+
+  <div data-role="content" style="text-align:center; padding:30px;">
+    <div style="display:flex; flex-direction:column; align-items:center; gap:25px;">
+
+			<!-- Fila 0 -->
+			<div style="display: flex; justify-content: center; gap: 25px; margin-bottom: 20px;">
+				<div>
+					<img src="img/ELEMENTOS P16 (musika)/musica titulo.png" style="width:80%; height:auto;">
+				</div>
+			</div>
+
+      <!-- Canción 1 -->
+			<div class="audio-card" style="background-image: url('img/ELEMENTOS P16 (musika)/fondo barra musica australia.png');">
+				<audio   id="audio1" controls style="width:220px;">
+					<source type="audio/mpeg">
+				</audio>
+			</div>
+
+      <!-- Canción 2 -->
+      <div class="audio-card" style="background-image: url('img/ELEMENTOS P16 (musika)/fondo barra musica brasil.png');">
+				<audio   id="audio2" controls style="width:220px;">
+					<source type="audio/mpeg">
+				</audio>
+			</div>
+
+      <!-- Canción 3 -->
+      <div class="audio-card-derecha" style="background-image: url('img/ELEMENTOS P16 (musika)/fondo barra musica china.png');">
+				<audio  id="audio3" controls style="width:220px;">
+					<source type="audio/mpeg">
+				</audio>
+
+				
+
+			</div>
+
+      <!-- Canción 4 -->
+      <div class="audio-card-derecha" style="background-image: url('img/ELEMENTOS P16 (musika)/fondo barra musica egipto.png');">
+				<audio  id="audio4" controls style="width:220px;">
+					<source type="audio/mpeg">
+				</audio>
+			</div>
+
+      <!-- Canción 5 -->
+      <div class="audio-card" style="background-image: url('img/ELEMENTOS P16 (musika)/fondo barra musica francia.png');">
+				<audio  id="audio5" controls style="width:220px;">
+					< type="audio/mpeg">
+				</audio>
+			</div>
+
+      <!-- Canción 6 -->
+      <div class="audio-card-derecha" style="background-image: url('img/ELEMENTOS P16 (musika)/fondo barra musica eeuu.png');">
+				<audio  id="audio6" controls style="width:220px;">
+					<type="audio/mpeg">
+				</audio>
+			</div>		
+    </div>
+
+    <div style="margin-top:40px;">
+      <a href="#page-menu">
+        <img src="img/ELEMENTOS P4/BOTON SALIR.png" class="salir">
+      </a>
+    </div>
+  </div>
+</div>
 
 	<!-- P17: PINTA Y COLOREA -->
-	<div data-role="page" id="page-pinta-y-colorea">
+	<div data-role="page" id="page-pinta-y-colorea" class="pinta-y-colorea">
 		<div data-role="header" data-position="fixed">
 			<img src='img/ElP1/PARTE DE ARRIBA/ICONO KULTURAPP.png'>
 			<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png' style="float: right; cursor: pointer;" onclick="openInfo()">
@@ -487,46 +463,45 @@ z-index:9999;">
 
 		<div data-role="content" style="text-align: center; padding: 20px;">
 			<img src='img/Pinta y colorea/pintaycolorea titulo.png' style="width: 100%;">
-			<h3>Elige un dibujo</h3>
 
 			<!-- DIBUJOS-->
 			<div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
-				<p>Dibujo 1</p>
+				<p>Dibujo E.E.U.U</p>
 				<a href="#page-dibujo1">
 					<img src="img/Pinta y colorea/USA.jpg" style="width: 80%; height: auto; " />
 				</a>
-				<p>Dibujo 2</p>
+				<p>Dibujo Francia</p>
 				<a href="#page-dibujo2">
 					<img src="img/Pinta y colorea/FRANCIA.jpg" style="width: 80%; height: auto; " />
 				</a>
-				<p>Dibujo 3</p>
+				<p>Dibujo Egipto</p>
 				<a href="#page-dibujo3">
 					<img src="img/Pinta y colorea/EGYPT.jpg" style="width: 80%; height: auto; " />
 				</a>
-				<p>Dibujo 4</p>
+				<p>Dibujo China</p>
 				<a href="#page-dibujo4">
 					<img src="img/Pinta y colorea/CHINA.jpg" style="width: 80%; height: auto; " />
 				</a>
-				<p>Dibujo 5</p>
+				<p>Dibujo Australia</p>
 				<a href="#page-dibujo5">
-					<img src="img/Pinta y colorea/BRAZIL.jpg" style="width: 80%; height: auto; " />
-				</a>
-				<p>Dibujo 6</p>
-				<a href="#page-dibujo6">
 					<img src="img/Pinta y colorea/AUSTRALIA.jpg" style="width: 80%; height: auto; " />
+				</a>
+				<p>Dibujo Brasil</p>
+				<a href="#page-dibujo6">
+					<img src="img/Pinta y colorea/BRAZIL.jpg" style="width: 80%; height: auto; " />
 				</a>
 			</div>
 
-			<!-- Botón salir -->
-			<a href="#page-menu" class="ui-btn ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left"
-				style="margin-top:30px;">
-				Salir
-			</a>
+			<div style="margin-top:40px;">
+				<a href="#page-menu">
+					<img src="img/ELEMENTOS P4/BOTON SALIR.png" class="salir">
+				</a>
+			</div>
 		</div>
 	</div>
 
 	<!-- P18: DIBUJO 1 -->
-	<div data-role="page" id="page-dibujo1">
+	<div data-role="page" id="page-dibujo1" class="pinta-y-colorea">
 		<div data-role="header" data-position="fixed">
 			<img src='img/ElP1/PARTE DE ARRIBA/ICONO KULTURAPP.png'>
 			<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png' style="float: right; cursor: pointer;" onclick="openInfo()">
@@ -535,18 +510,22 @@ z-index:9999;">
 		<div data-role="content" style="text-align: center;">
 			<div>
 				<img src="img/Pinta y colorea/USA.jpg" style="width: 100%; height: auto; " />
-				Dibujo 1
+				Dibujo E.E.U.U
 			</div>
 
-			<a href="#" id="enviarDibujo1" class="ui-btn ui-corner-all ui-btn-b">Enviar</a>
-			<a href="#page-pinta-y-colorea" class="ui-btn ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Atrás</a>
+			<a href="#" id="enviarDibujo1">
+				<img src="img/Pinta y colorea/boton imprimir.png" style="width:100%; height:auto;">
+			</a>
+			<a href="#page-pinta-y-colorea" >
+				<img src="img/ELEMENTOS P4/BOTON SALIR.png" class="salir">
+			</a>
 			<a href="#page-dibujo2" class="ui-btn ui-corner-all ui-btn-inline ui-icon-forward ui-btn-icon-right">Cambiar
 				dibujo</a>
 		</div>
 	</div>
 
 	<!-- P19: DIBUJO 2 -->
-	<div data-role="page" id="page-dibujo2">
+	<div data-role="page" id="page-dibujo2" class="pinta-y-colorea">
 		<div data-role="header" data-position="fixed">
 			<img src='img/ElP1/PARTE DE ARRIBA/ICONO KULTURAPP.png'>
 			<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png' style="float: right; cursor: pointer;" onclick="openInfo()">
@@ -555,18 +534,22 @@ z-index:9999;">
 		<div data-role="content" style="text-align: center;">
 			<div>
 				<img src="img/Pinta y colorea/FRANCIA.jpg" style="width: 100%; height: auto; " />
-				Dibujo 2
+				Dibujo Francia
 			</div>
 
-			<a href="#href=mailto:bcavia001@ikasle.ehu.eus" class="ui-btn ui-corner-all ui-btn-b" onclick="">Enviar</a>
-			<a href="#page-pinta-y-colorea" class="ui-btn ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Atrás</a>
+			<a href="#" id="enviarDibujo2" onclick="">
+				<img src="img/Pinta y colorea/boton imprimir.png" style="width:100%; height:auto;">
+			</a>
+			<a href="#page-pinta-y-colorea" >
+				<img src="img/ELEMENTOS P4/BOTON SALIR.png" class="salir">
+			</a>
 			<a href="#page-dibujo3" class="ui-btn ui-corner-all ui-btn-inline ui-icon-forward ui-btn-icon-right">Cambiar
 				dibujo</a>
 		</div>
 	</div>
 
 	<!-- P20: DIBUJO 3 -->
-	<div data-role="page" id="page-dibujo3">
+	<div data-role="page" id="page-dibujo3" class="pinta-y-colorea">
 		<div data-role="header" data-position="fixed">
 			<img src='img/ElP1/PARTE DE ARRIBA/ICONO KULTURAPP.png'>
 			<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png' style="float: right; cursor: pointer;" onclick="openInfo()">
@@ -575,18 +558,22 @@ z-index:9999;">
 		<div data-role="content" style="text-align: center;">
 			<div>
 				<img src="img/Pinta y colorea/EGYPT.jpg" style="width: 100%; height: auto; " />
-				Dibujo 3
+				Dibujo Egipto
 			</div>
 
-			<a href="#" class="ui-btn ui-corner-all ui-btn-b" onclick="">Enviar</a>
-			<a href="#page-pinta-y-colorea" class="ui-btn ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Atrás</a>
+			<a href="#" id="enviarDibujo3">
+				<img src="img/Pinta y colorea/boton imprimir.png" style="width:100%; height:auto;">
+			</a>
+			<a href="#page-pinta-y-colorea" >
+				<img src="img/ELEMENTOS P4/BOTON SALIR.png" class="salir">
+			</a>
 			<a href="#page-dibujo4" class="ui-btn ui-corner-all ui-btn-inline ui-icon-forward ui-btn-icon-right">Cambiar
 				dibujo</a>
 		</div>
 	</div>
 
 	<!-- P21: DIBUJO 4 -->
-	<div data-role="page" id="page-dibujo4">
+	<div data-role="page" id="page-dibujo4" class="pinta-y-colorea">
 		<div data-role="header" data-position="fixed">
 			<img src='img/ElP1/PARTE DE ARRIBA/ICONO KULTURAPP.png'>
 			<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png' style="float: right; cursor: pointer;" onclick="openInfo()">
@@ -595,18 +582,20 @@ z-index:9999;">
 		<div data-role="content" style="text-align: center;">
 			<div>
 				<img src="img/Pinta y colorea/CHINA.jpg" style="width: 100%; height: auto; " />
-				Dibujo 4
+				Dibujo China
 			</div>
 
-			<a href="#" class="ui-btn ui-corner-all ui-btn-b" onclick="">Enviar</a>
-			<a href="#page-pinta-y-colorea" class="ui-btn ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Atrás</a>
+			<a href="#" id="enviarDibujo4">
+				<img src="img/Pinta y colorea/boton imprimir.png" style="width:100%; height:auto;"></a>
+			<a href="#page-pinta-y-colorea" >
+				<img src="img/ELEMENTOS P4/BOTON SALIR.png" class="salir"></a>
 			<a href="#page-dibujo5" class="ui-btn ui-corner-all ui-btn-inline ui-icon-forward ui-btn-icon-right">Cambiar
 				dibujo</a>
 		</div>
 	</div>
 
 	<!-- P22: DIBUJO 5 -->
-	<div data-role="page" id="page-dibujo5">
+	<div data-role="page" id="page-dibujo5" class="pinta-y-colorea">
 		<div data-role="header" data-position="fixed">
 			<img src='img/ElP1/PARTE DE ARRIBA/ICONO KULTURAPP.png'>
 			<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png' style="float: right; cursor: pointer;" onclick="openInfo()">
@@ -615,18 +604,22 @@ z-index:9999;">
 		<div data-role="content" style="text-align: center;">
 			<div>
 				<img src="img/Pinta y colorea/AUSTRALIA.jpg" style="width: 100%; height: auto; " />
-				Dibujo 5
+				Dibujo Australia
 			</div>
 
-			<a href="#" id="enviarDibujo5" class="ui-btn ui-corner-all ui-btn-b">Enviar</a>
-			<a href="#page-pinta-y-colorea" class="ui-btn ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Atrás</a>
+			<a href="#" id="enviarDibujo5">
+				<img src="img/Pinta y colorea/boton imprimir.png" style="width:100%; height:auto;">
+			</a>
+			<a href="#page-pinta-y-colorea" >
+				<img src="img/ELEMENTOS P4/BOTON SALIR.png" class="salir">
+			</a>
 			<a href="#page-dibujo6" class="ui-btn ui-corner-all ui-btn-inline ui-icon-forward ui-btn-icon-right">Cambiar
 				dibujo</a>
 		</div>
 	</div>
 
 	<!-- P23: DIBUJO 6 -->
-	<div data-role="page" id="page-dibujo6">
+	<div data-role="page" id="page-dibujo6" class="pinta-y-colorea">
 		<div data-role="header" data-position="fixed">
 			<img src='img/ElP1/PARTE DE ARRIBA/ICONO KULTURAPP.png'>
 			<img src='img/ElP1/PARTE DE ARRIBA/ICONO INFO.png' style="float: right; cursor: pointer;" onclick="openInfo()">
@@ -635,11 +628,13 @@ z-index:9999;">
 		<div data-role="content" style="text-align: center;">
 			<div>
 				<img src="img/Pinta y colorea/BRAZIL.jpg" style="width: 100%; height: auto; " />
-				Dibujo 6
+				Dibujo Brasil
 			</div>
 
-			<a href="#" id="enviarDibujo6" class="ui-btn ui-corner-all ui-btn-b">Enviar</a>
-			<a href="#page-pinta-y-colorea" class="ui-btn ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Atrás</a>
+			<a href="#" id="enviarDibujo6">
+				<img src="img/Pinta y colorea/boton imprimir.png" style="width:100%; height:auto;"></a>
+			<a href="#page-pinta-y-colorea" >
+				<img src="img/ELEMENTOS P4/BOTON SALIR.png" class="salir"></a>
 			<a href="#page-dibujo1" class="ui-btn ui-corner-all ui-btn-inline ui-icon-forward ui-btn-icon-right">Cambiar
 				dibujo</a>
 		</div>
@@ -648,11 +643,12 @@ z-index:9999;">
 	<script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript" src="js/firebase/8.7.1/firebase-app.js"></script>
 	<script type="text/javascript" src="js/firebase/8.7.1/firebase-database.js"></script>
-	<script type="text/javascript" src="js/firebase/8.7.1/firebase-storage.js"></script>
 	<script type="text/javascript" src="js/firebase/8.7.1/firebase-auth.js"></script>
 	<script type="text/javascript" src="js/firebase/config.js"></script>
 	<script type="text/javascript" src="js/firebase/auth.js"></script>
 	<script type="text/javascript" src="js/firebase/database.js"></script>
+	<script type="text/javascript" src="js/lines.js"></script>
+	<script type="text/javascript" src="js/utils.js"></script>
 	<script type="text/javascript" src="js/objects.js"></script>
 	<script type="text/javascript" src="js/functions.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
