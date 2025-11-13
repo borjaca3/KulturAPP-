@@ -46,7 +46,7 @@ document.addEventListener("deviceready", function () {
 			btn.addEventListener("click", function () {
 
 				const email = {
-					to: 'lherrero018@ikasle.ehu.eus',
+					to: '',
 					subject: `${d.titulo} enviado desde KulturApp`,
 					body: `
 										¡Hola!<br><br>

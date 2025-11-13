@@ -2,6 +2,6 @@ README
 
 cordova plugin add cordova-plugin-email-composer
 
-///cordova plugin add cordova-plugin-file
+
 
 
